@@ -1,1 +1,47 @@
-Hello World
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje Personalizado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin-top: 50px;
+        }
+        .message {
+            background-color: #ffffff;
+            border: 2px solid #cccccc;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333333;
+        }
+        p {
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        <h1><span id="name"></span>!</h1>
+        <p>De casa se viene llorado.</p>
+    </div>
+
+    <script>
+        // Obtener el parámetro de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+
+        // Actualizar el contenido del elemento con el nombre proporcionado
+        if (name) {
+            document.getElementById('name').innerText = name;
+        }
+    </script>
+</body>
+</html>

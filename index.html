@@ -40,7 +40,8 @@
 
         // Actualizar el contenido del elemento con el nombre proporcionado
         if (name) {
-            document.getElementById('name').innerText = name;
+            name = encodeURIComponent(name);
+            document.getElementById('name').innerText = decodeURIComponent(name);
         }
     </script>
 </body>
